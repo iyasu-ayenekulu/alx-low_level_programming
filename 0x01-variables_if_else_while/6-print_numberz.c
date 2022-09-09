@@ -6,10 +6,12 @@
  */
 int main(void)
 {
-char b;
-for (b = 'a'; b <= 'z'; b++)
-if (b != 'q' && b != 'e')
-putchar(b);
+int i = 48;
+while (i < 58)
+{
+putchar(i);
+i++;
+}
 putchar('\n');
 return (0);
 }
