@@ -1,16 +1,15 @@
-# include <studio.h>
-
+#include <stdio.h>
 /**
- * main - enyery point
+ * main - Entry point
  *
- * return: 0
+ * Return: 0
  */
 int main(void)
 {
 char a = 'a';
 while (a <= 'z')
 {
-putchar (a);
+putchar(a);
 a++;
 }
 a = 'A';
@@ -20,7 +19,7 @@ putchar(a);
 a++;
 }
 putchar('\n');
-return(0);
+return (0);
 }
 
 
