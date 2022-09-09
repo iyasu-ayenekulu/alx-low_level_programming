@@ -1,17 +1,17 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 /**
- * main - Entry point
+ * main - the function main be  generates a random number  a validate
  *
- * Return: Always 0
+ * Return: Always 0 (Sucess)
  */
 int main(void)
 {
 int n;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-if  (n > 0)
+if (n > 0)
 printf("%d is positive\n", n);
 else if (n < 0)
 printf("%d is negative\n", n);
