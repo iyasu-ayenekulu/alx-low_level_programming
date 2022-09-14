@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * add - Adds two integers.
- * num1: the first iteger to be added
- * num2: the second integer to be added.
+ * @num1: the first iteger to be added
+ * @num2: the second integer to be added.
  *
  * Return: the ressult of the addition.
  */
