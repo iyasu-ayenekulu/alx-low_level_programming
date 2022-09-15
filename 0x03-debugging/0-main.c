@@ -3,7 +3,7 @@
  * main - tests function that prints if integer is positive or negative
  * Retur: 0
  */
-it main(void)
+int main(void)
 {
 int i;
 i = 0;
