@@ -1,4 +1,4 @@
-fndef MAIN_H_INCLUDED
+#ifndef MAIN_H_INCLUDEiD
 
 #define MAIN_H_INCLUDED
 
@@ -10,17 +10,7 @@ fndef MAIN_H_INCLUDED
 
 int _putchar(char c);
 
-int main(int argc, char *argv[])
-
-int main(int argc, __attribute__((unused)) char *argv[])
-
-int main(int argc, char *argv[])
-
-int main(int argc, char *argv[])
-
-int main(int argc, char *argv[])
-
-int main(int argc, char *argv[])
+int check_num(char *str);
 
 
 
