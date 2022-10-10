@@ -1,54 +1,81 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "dog.h"
-int get_len(int i);
-char *str_cpy(char *dest, char *src);
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 /**
- * new_dog - a function that creates a new dog
- * get len of name + owner, malloc them, cpy name + owner to new
- * @name: name
- * @age: age
- * @owner: owner
- * Return: 0
+ * new_dog - ...
+ * @name: ...
+ * @age: ...
+ * @owner: ...
+ * Return: ...
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_name;
-	char *copy_name, *copy_owner;
-	unsigned int x, name_len = 0, owner_len = 0;
+	dog_t *cutie_dog;
 
-	new_name = malloc(sizeof(dog_t));
+	int name_l = 0, own_l = 0;
 
-	if (name == NULL)
-		return (NULL);
-	if (name == NULL || age <= 0 || owner == NULL)
+	if (name != NULL && owner != NULL)
 	{
-		free(new_name);
-		return (NULL);
+		name_l = _strlen(name) + 1;
+		own_l = _strlen(owner) + 1;
+		cutie_dog = malloc(sizeof(dog_t));
+
+		if (cutie_dog == NULL)
+			return (NULL);
+		cutie_dog->name = malloc(sizeof(char) * name_l);
+
+		if (cutie_dog->name == NULL)
+		{
+			free(cutie_dog);
+			return (NULL);
+		}
+		cutie_dog->owner = malloc(sizeof(char) * own_l);
+
+		if (cutie_dog->owner == NULL)
+		{
+			free(cutie_dog->name);
+			free(cutie_dog);
+
+			return (NULL);
+		}
+		cutie_dog->name = _strcpy(cutie_dog->name, name);
+		cutie_dog->owner = _strcpy(cutie_dog->owner, owner);
+		cutie_dog->age = age;
 	}
-	for (x = 0; name[x] != '\0'; x++)
-		name_len++;
-	for (x = 0; owner[x] != '\0'; x++)
-		owner_len++;
-	copy_name = malloc(sizeof(char) * (name_len + 1));
-	if (copy_name == NULL)
-		return (NULL);
-	copy_owner = malloc(sizeof(char) * (owner_len + 1));
-	if (copy_owner == NULL)
-		return (NULL);
-	for (x = 0; x <= name_len; x++)
+	return (cutie_dog);
+}
+/**
+ * _strlen - Returns the length of a string
+ * @s: String to count
+ * Return: String length
+ */
+int _strlen(char *s)
+{
+	int c = 0;
 
-		copy_name[x] = name[x];
+	for (; *s != '\0'; s++)
+	{
+		c++;
+	}
+	return (c);
 
-	for (x = 0; x <= owner_len; x++)
+}
+/**
+ * _strcpy - Copy a string
+ * @dest: Destination value
+ * @src: Source value
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
 
-		copy_owner[x] = owner[x];
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i++] = '\0';
 
-	new_name->name = copy_name;
-
-	new_name->owner = copy_owner;
-
-	new_name->age = age;
-
-	return (new_name);
+	return (dest);
 }
