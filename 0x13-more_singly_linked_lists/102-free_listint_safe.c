@@ -1,5 +1,4 @@
 #include "lists.h"
-
 #include <stdio.h>
 /**
  * _find_loop - finds the loop in a linked list
@@ -19,8 +18,7 @@ listint_t *_find_loop(listint_t *head)
 	{
 		if (one == two)
 			break;
-		
-		one = one->next;
+	one = one->next;
 		two = two->next->next;
 	}
 	if (one != two)
