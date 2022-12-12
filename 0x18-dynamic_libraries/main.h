@@ -1,6 +1,10 @@
-#ifndef _MAIN_H_
+#ifndef HOLBERTON_H
 
-#define _MAIN_H_
+#define HOLBERTON_H
+
+
+
+#define EXIT_SUCCESS 0
 
 
 
@@ -46,4 +50,4 @@ char *_strstr(char *haystack, char *needle);
 
 
 
-#endif /* _MAIN_H_ */
+#endif
